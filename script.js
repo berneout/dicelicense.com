@@ -36,7 +36,7 @@ var components = [
   {
     id: 'grant',
     alternatives: [
-      function () {
+      function mitStyleGrant () {
         return select([
           (
             select([
@@ -69,7 +69,7 @@ var components = [
         '.'
       },
 
-      function () {
+      function blueOakStyleGrant () {
         return 'The copyright holders license you' +
         ' to do everything with this software' +
         ' that would otherwise infringe their copyright in it,' +
@@ -82,7 +82,7 @@ var components = [
   {
     id: 'notice',
     alternatives: [
-      function () {
+      function mitStyleNotice () {
         return 'The above copyright notice' +
         select([
           ' and the text of this license',
@@ -98,7 +98,7 @@ var components = [
         '.'
       },
 
-      function () {
+      function blueOakStyleNotice () {
         return 'You must ensure' +
         ' that everyone who gets a copy' +
         ' of any part of this software from you,' +
@@ -113,7 +113,7 @@ var components = [
     id: 'disclaimer',
     conspicuous: true,
     alternatives: [
-      function () {
+      function mitStyleDisclaimer () {
         return 'This software' +
         select([
           ' is provided "as is",', ' is provided as is,',
@@ -128,7 +128,7 @@ var components = [
         '.'
       },
 
-      function () {
+      function blueOakStyleDisclaimer () {
         return select([
           'As far as the law allows',
           'To the fullest legal extent',
@@ -154,7 +154,7 @@ var components = [
     id: 'exclusion',
     conspicuous: true,
     alternatives: [
-      function () {
+      function mitStyleDisclaimer () {
         return 'In no event' +
         ' shall the authors or copyright holders' +
         ' be liable' +
@@ -164,7 +164,7 @@ var components = [
         '.'
       },
 
-      function () {
+      function blueOakStyleDisclaimer () {
         return 'As far as the law allows,' +
         ' no contributor will be liable to anyone' +
         ' for any damages related to this software or this license,' +
