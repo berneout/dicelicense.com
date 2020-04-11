@@ -12,8 +12,11 @@ footer[role=contentinfo] {
 }
 
 footer[role=contentinfo] {
-  color: darkred;
   margin-top: 2rem;
+}
+
+.disclaimer {
+  color: darkred;
 }
 
 pre {
