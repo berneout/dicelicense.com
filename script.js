@@ -142,7 +142,14 @@ var components = [
         optional(' or condition') +
         optional(' of any kind') +
         optional(', express or implied') +
-        optional(', including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement') +
+        optional(
+          ', including but not limited to the warranties of ' +
+          list('and', shuffle([
+            'merchantability',
+            'fitness for a particular purpose',
+            'noninfringement'
+          ]))
+        ) +
         '.'
       },
 
@@ -201,9 +208,23 @@ var components = [
         return 'In no event' +
         ' shall the authors or copyright holders' +
         ' be liable' +
-        ' for any claim, damages or other liability,' +
-        ' whether in an action of contract, tort or otherwise,' +
-        ' arising from, out of or in connection with this software or the use or other dealings in this software' +
+        ' for any ' +
+        select([
+          'claim, damages',
+          'damage, claim'
+        ]) +
+        ' or other liability,' +
+        ' whether in an action of ' +
+        select([
+          'contract, tort',
+          'tort, contract'
+        ]) +
+        ' or otherwise,' +
+        ' arising from, out of or in connection with ' +
+        list('or', shuffle([
+          'this software',
+          'the use or other dealings in this software'
+        ])) +
         '.'
       },
 
