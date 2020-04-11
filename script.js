@@ -69,6 +69,13 @@ var components = [
         '.'
       },
 
+      function bsdStyleGrant () {
+        return 'Redistribution and use' +
+        ' in source and binary forms,' +
+        ' with or without modification,' +
+        ' are permitted.'
+      },
+
       function blueOakStyleGrant () {
         return 'The copyright holders license you' +
         ' to do everything with this software' +
@@ -96,6 +103,17 @@ var components = [
         ]) +
         ' be included in all copies or substantial portions of this software' +
         '.'
+      },
+
+      function bsdStyleNotice () {
+        return 'Redistributions of source code' +
+        ' must retain the above copyright notice' +
+        ' and the text of this license.' +
+        ' Redistributions in binary form' +
+        ' must reproduce the above copyright notice' +
+        ' and the text of this license' +
+        ' in the documentation and/or other materials' +
+        ' provided with the distribution.'
       },
 
       function blueOakStyleNotice () {
@@ -128,6 +146,31 @@ var components = [
         '.'
       },
 
+      function bsdStyleDisclaimer () {
+        return 'This software' +
+        ' is provided by the copyright holders and contributors' +
+        select([
+          ' "as is"' +
+          ' as is'
+        ]) +
+        ' and any ' +
+        list(
+          select(['or', 'and']),
+          shuffle(['express', 'implied'])
+        ) +
+        ' warranties' +
+        optional(
+          ', including, but not limited to,' +
+          ' the implied warranties of ' +
+          list('and', shuffle([
+            'merchantability',
+            'fitness for a particular purpose'
+          ])) +
+          ','
+        ) +
+        ' are disclaimed. '
+      },
+
       function blueOakStyleDisclaimer () {
         return select([
           'As far as the law allows',
@@ -154,7 +197,7 @@ var components = [
     id: 'exclusion',
     conspicuous: true,
     alternatives: [
-      function mitStyleDisclaimer () {
+      function mitStyleExclusion () {
         return 'In no event' +
         ' shall the authors or copyright holders' +
         ' be liable' +
@@ -164,7 +207,47 @@ var components = [
         '.'
       },
 
-      function blueOakStyleDisclaimer () {
+      function bsdStyleExclusion () {
+        return 'In no event' +
+        ' shall the copyright holder or contributors' +
+        ' be liable for any' +
+        list('or', shuffle([
+          'direct',
+          'indirect',
+          'incidental',
+          'special',
+          'exemplary',
+          'consequential'
+        ])) +
+        ' damages' +
+        optional(
+          '(' +
+          'including, but not limited to,' +
+          list('or', shuffle([
+            'procurement of ' +
+            list('or', shuffle([
+              'substitute goods', 'services'
+            ])),
+            'loss of ' +
+            list('or', shuffle([
+              'use', 'data', 'profits'
+            ])),
+            'business interruption'
+          ])) +
+          ')'
+        ) +
+        ' however caused and on any theory of liability' +
+        ', whether in ' +
+        list('or', shuffle([
+          'contract',
+          'strict liability',
+          'tort (including negligence or otherwise)'
+        ])) +
+        ' arising in any way out of the use of this software' +
+        ', even if advised of the possibility of such damage.'
+      },
+
+      function blueOakStyleExclusion () {
         return 'As far as the law allows,' +
         ' no contributor will be liable to anyone' +
         ' for any damages related to this software or this license,' +
