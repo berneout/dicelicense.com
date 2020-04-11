@@ -327,16 +327,16 @@ function displayLicense (text) {
   license.appendChild(document.createTextNode(text))
 }
 
-function list (conjunction, words) {
-  var length = words.length
+function list (conjunction, items) {
+  var length = items.length
   if (length === 0) {
     return ''
   } else if (length === 1) {
-    return words[0]
+    return items[0]
   } else if (length === 2) {
-    return words[0] + ' ' + conjunction + ' ' + words[1]
+    return items[0] + ' ' + conjunction + ' ' + items[1]
   } else {
-    return words.slice(0, length - 1).join(', ') + ', ' + conjunction + ' ' + words[words.length - 1]
+    return items.slice(0, length - 1).join(', ') + ', ' + conjunction + ' ' + items[items.length - 1]
   }
 }
 
