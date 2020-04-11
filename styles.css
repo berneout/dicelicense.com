@@ -1,0 +1,14 @@
+html {
+  font-family: sans-serif;
+  font-size: 150%;
+  line-height: 1.37;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 30rem;
+}
+
+pre {
+  white-space: pre-wrap;
+}
