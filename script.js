@@ -43,7 +43,7 @@ var components = [
               'Permission is hereby granted',
               'Permission is granted'
             ]) +
-            ' to any person obtaining a copy of this software and associated documentation files'
+            ' to any person obtaining a copy of this software'
           ),
           'You are hereby licensed',
           'You are licensed',
@@ -70,7 +70,10 @@ var components = [
       },
 
       function bsdStyleGrant () {
-        return 'Redistribution and use' +
+        return select([
+          'Redistribution and use',
+          'Use and redistribution'
+        ]) +
         ' in source and binary forms,' +
         ' with or without modification,' +
         ' are permitted.'
@@ -91,27 +94,31 @@ var components = [
     alternatives: [
       function mitStyleNotice () {
         return 'The above copyright notice' +
+        ' and the text of this license' +
         select([
-          ' and the text of this license',
-          ' and this permission notice (including the next paragraph)'
-        ]) +
-        select([
-          ' shall',
-          ' must',
+          ' shall be',
+          ' must be',
           ' have to be',
           ' are required to be'
         ]) +
-        ' be included in all copies or substantial portions of this software' +
+        ' included in all copies or substantial portions of this software' +
         '.'
       },
 
       function bsdStyleNotice () {
         return 'Redistributions of source code' +
-        ' must retain the above copyright notice' +
-        ' and the text of this license.' +
+        ' must retain ' +
+        list('and', shuffle([
+          'the above copyright notice',
+          'the text of this license'
+        ])) +
+        '.' +
         ' Redistributions in binary form' +
-        ' must reproduce the above copyright notice' +
-        ' and the text of this license' +
+        ' must reproduce ' +
+        list('and', shuffle([
+          'the above copyright notice',
+          'the text of this license'
+        ])) +
         ' in the documentation and/or other materials' +
         ' provided with the distribution.'
       },
@@ -121,7 +128,11 @@ var components = [
         ' that everyone who gets a copy' +
         ' of any part of this software from you,' +
         ' with or without changes,' +
-        ' also gets the text of this license' +
+        ' also gets ' +
+        list('and', shuffle([
+          'the text of this license',
+          'the copyright notice'
+        ])) +
         '.'
       }
     ]
@@ -134,9 +145,10 @@ var components = [
       function mitStyleDisclaimer () {
         return 'This software' +
         select([
-          ' is provided "as is",', ' is provided as is,',
-          ' comes "as is",',
-          ' comes as is,'
+          ' is provided "as is"',
+          ' is provided as is',
+          ' comes "as is"',
+          ' comes as is'
         ]) +
         ' without warranty' +
         optional(' or condition') +
@@ -155,7 +167,11 @@ var components = [
 
       function bsdStyleDisclaimer () {
         return 'This software' +
-        ' is provided by the copyright holders and contributors' +
+        ' is provided by the ' +
+        list('and', shuffle([
+          'copyright holders',
+          'contributors'
+        ])) +
         select([
           ' "as is"' +
           ' as is'
@@ -230,7 +246,11 @@ var components = [
 
       function bsdStyleExclusion () {
         return 'In no event' +
-        ' shall the copyright holder or contributors' +
+        ' shall the ' +
+        list('or', shuffle([
+          'copyright holders',
+          'contributors'
+        ])) +
         ' be liable for any' +
         list('or', shuffle([
           'direct',
