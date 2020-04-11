@@ -163,8 +163,12 @@ var components = [
   }
 ]
 
+function coinFlip () {
+  return Math.random() >= 0.5
+}
+
 function optional (element) {
-  if (Math.random() >= 0.5) {
+  if (coinFlip()) {
     return element
   } else {
     return ''
@@ -186,7 +190,17 @@ function generateLicense () {
     }
     return text
   })
-  displayLicense(selected.join('\n\n') + '\n')
+  var text = selected.join('\n\n') + '\n'
+  if (coinFlip()) {
+    text = britify(text)
+  }
+  displayLicense(text)
+}
+
+function britify (string) {
+  return string
+    .replace(/license/g, 'licence')
+    .replace(/License/g, 'Licence')
 }
 
 function displayLicense (text) {
