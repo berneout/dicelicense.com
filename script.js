@@ -38,15 +38,19 @@ var components = [
     alternatives: [
       function () {
         return select([
-          'Permission is hereby granted',
-          'Permission is granted',
+          (
+            select([
+              'Permission is hereby granted',
+              'Permission is granted'
+            ]) +
+            ' to any person obtaining a copy of this software and associated documentation files'
+          ),
           'You are hereby licensed',
           'You are licensed',
           'The copyright holders hereby grant you a license',
           'The copyright holders grant you a license'
         ]) +
         optional(', free of charge,') +
-        ' to any person obtaining a copy of this software and associated documentation files,' +
         ' to deal in this software without restriction' +
         optional(
           ', including without limitation the rights to ' +
