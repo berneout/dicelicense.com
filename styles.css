@@ -12,12 +12,25 @@ footer[role=contentinfo] {
 }
 
 footer[role=contentinfo] {
-  margin-top: 2rem;
   border-top: 1px solid black;
-  padding-top: 0.5rem;
   color: darkred;
+  margin-top: 2rem;
+  padding-top: 0.5rem;
 }
 
 pre {
+  border: 1px dashed black;
+  margin: 1rem 0;
+  padding: 1rem;
   white-space: pre-wrap;
+}
+
+button {
+  background: white;
+  border-radius: 1ex;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 1ex;
 }
