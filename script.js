@@ -67,6 +67,14 @@ var components = [
           ' this software'
         ) +
         '.'
+      },
+
+      function () {
+        return 'The copyright holders license you' +
+        ' to do everything with this software' +
+        ' that would otherwise infringe their copyright in it,' +
+        ' and to do everything with this software' +
+        ' that would otherwise any patents they have on it.'
       }
     ]
   },
