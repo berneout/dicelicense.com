@@ -271,7 +271,9 @@ function optional (element) {
 }
 
 function generateLicense () {
-  var selected = components.map(function (component) {
+  var shuffled = [components[0]]
+    .concat(shuffle(components.slice(1)))
+  var selected = shuffled.map(function (component) {
     var alternative = select(component.alternatives)
     var type = typeof alternative
     var text
