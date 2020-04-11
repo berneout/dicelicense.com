@@ -12,7 +12,6 @@ footer[role=contentinfo] {
 }
 
 footer[role=contentinfo] {
-  border-top: 1px solid black;
   color: darkred;
   margin-top: 2rem;
   padding-top: 0.5rem;
@@ -28,7 +27,6 @@ pre {
 button {
   background: white;
   border-radius: 1ex;
-  border: 1px solid black;
   cursor: pointer;
   font-size: 100%;
   font-weight: bold;
