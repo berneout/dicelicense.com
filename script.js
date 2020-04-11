@@ -171,18 +171,6 @@ function optional (element) {
   }
 }
 
-function process (argument) {
-  if (typeof argument === 'string') {
-    return argument
-  } else if (typeof argument === 'function') {
-    return process(argument())
-  } else if (Array.isArray(argument)) {
-    return process(select(argument))
-  } else {
-    throw new Error('Do not know how to process: ' + JSON.stringify(argument))
-  }
-}
-
 function generateLicense () {
   var selected = components.map(function (component) {
     var alternative = select(component.alternatives)
